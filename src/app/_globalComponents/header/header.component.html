@@ -1,0 +1,31 @@
+<section class="header">
+
+  <!-- Header Logo-->
+  <div class="header_logo">
+    <img src="./assets/svgs/sharkSvg.svg" alt="" class="header_logo_svg" style="fill: white; color: white">
+    <h6 class="header_logo_title">Where to Scuba</h6>
+    <i class="fas fa-bars header_logo_menu" (click)="toggleMobileMenu()"></i>
+  </div>
+
+  <!-- Header Primary Nav -->
+  <div class="header_navigation">
+    <ul>
+      <li class="header_navigation_option" *ngFor="let opt of headerOpts.navigation">
+        <!-- [] square brackets are for binding an attribute of a html element to a variable from the ts file -->
+        <a [routerLink]="opt.routerLink" class="header_navigation_href">{{opt.routerDisplayName}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header Admin Nav -->
+  <div class="header_admin">
+    <ul>
+      <li class="header_admin_option" *ngFor="let opt of headerOpts.adminNavigation">
+        <a [routerLink]="opt.routerLink" class="header_admin_href">{{opt.routerDisplayName}}</a>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<app-mobile-menu [showMenu]="showMenuVariable"></app-mobile-menu>

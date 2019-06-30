@@ -1,0 +1,14 @@
+@import './colours.scss';
+
+@mixin responsiveBP($width) {
+    @media (min-width:#{$width}) {
+        @content;
+    }
+}
+
+@mixin flexCenterCenter($direction: row){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}

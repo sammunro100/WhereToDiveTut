@@ -1,0 +1,8 @@
+.router_view{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 72px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}

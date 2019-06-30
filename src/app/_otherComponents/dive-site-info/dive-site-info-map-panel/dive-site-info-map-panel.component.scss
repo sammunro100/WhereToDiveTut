@@ -1,0 +1,177 @@
+@import '../../../_scss/common.scss';
+
+@mixin widget() {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 90px;
+    width: 100%;
+    margin: 1rem 0 0 0;
+}
+
+.panel {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: fixed;
+    top: 62px;
+    right: 0;
+    transform: translateX(100vw);
+    transition: all 0.3s linear;
+    display: flex;
+
+    @include responsiveBP(1024px) {
+        width: 340px;
+        transform: translate(0);
+    }
+
+    @include responsiveBP(1280px) {
+        width: 380px;
+    }
+
+    &_open {
+        transform: translateX(0);
+    }
+
+    &_toggle {
+        width: 20%;
+        height: 100%;
+
+        @include responsiveBP(1024px) {
+            display: none;
+        }
+    }
+
+    &_inner {
+        width: 80%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.900);
+        border-left: 1px solid $darkTeal;
+
+        @include responsiveBP(1024px) {
+            width: 100%;
+        }
+
+        &_top {
+            height: 40px;
+            @include flexCenterCenter();
+            border-bottom: 1px solid $darkTeal;
+        }
+
+        &_title {
+            font-weight: bold;
+            font-size: 16px;
+            @include responsiveBP(1280px){
+                font-size: 20px;
+            }
+        }
+
+        &_content {
+            padding: 0.5rem;
+        }
+
+        &_widget {
+            &_weather {
+                @include widget();
+                flex-direction: column;
+                margin-top: 0.5rem;
+
+                &_title {
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+
+                &_box {
+                    height: 100%;
+                    position: relative;
+
+                    &_temp {
+                        position: absolute;
+                        left: 22px;
+                        top: 1px;
+                        font-size: 12px;
+                    }
+
+                    &_time {
+                        font-size: 12px;
+                        margin-top: 4px;
+                    }
+                }
+            }
+
+            &_water {
+                @include widget();
+
+                &_title {
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+
+                &_reading {
+                    position: absolute;
+                    left: 24px;
+                    top: 38px;
+                }
+            }
+
+            &_other {
+                @include widget();
+
+                &_title {
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        &_description {
+            width: 100%;
+            margin: 1rem 0 0 0;
+
+            &_title {
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.desktop {
+    display: none;
+
+    @include responsiveBP(1024px) {
+        display: flex;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon_large {
+    font-size: 32px;
+}
+
+.icon_medium {
+    font-size: 24px;
+}
+
+.large_mobile {
+    display: none;
+
+    @include responsiveBP(414px) {
+        display: unset;
+    }
+}
+
+p {
+    font-size: 12px;
+
+    @include responsiveBP(1024px) {
+        font-size: 14px;
+    }
+    @include responsiveBP(1280px) {
+        font-size: 16px;
+    }
+}

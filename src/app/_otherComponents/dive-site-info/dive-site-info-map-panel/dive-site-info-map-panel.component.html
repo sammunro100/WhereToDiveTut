@@ -1,0 +1,78 @@
+<section class="panel" [class.panel_open]="!diveSiteInfoService.toggleDiveSiteInfo">
+  <div class="panel_toggle" (click)="toggleDivePanel()"></div>
+  <div class="panel_inner">
+    <div class="panel_inner_top">
+      <div class="panel_inner_title">{{diveSiteInformation.name}}</div>
+    </div>
+    <div class="panel_inner_content">
+
+      <div class="panel_inner_widget_weather">
+        <h6 class="panel_inner_widget_weather_title">
+          Weather Conditions
+        </h6>
+        <div class="flex">
+          <div class="panel_inner_widget_weather_box">
+            <i class="fas fa-cloud icon" style="color: #78909C"></i>
+            <p class="panel_inner_widget_weather_box_temp">25°C</p>
+            <p class="panel_inner_widget_weather_box_time">11:00 - 12:00</p>
+          </div>
+          <div class="panel_inner_widget_weather_box">
+            <i class="fas fa-wind icon" style="color: #212121"></i>
+            <p class="panel_inner_widget_weather_box_temp">20°C</p>
+            <p class="panel_inner_widget_weather_box_time">12:00 - 13:00</p>
+          </div>
+          <div class="panel_inner_widget_weather_box">
+            <i class="fas fa-sun icon" style="color: #FFC107"></i>
+            <p class="panel_inner_widget_weather_box_temp">18°C</p>
+            <p class="panel_inner_widget_weather_box_time">13:00 - 14:00</p>
+          </div>
+          <div class="panel_inner_widget_weather_box large_mobile desktop">
+            <i class="fas fa-cloud-showers-heavy icon" style="color: #3F51B5"></i>
+            <p class="panel_inner_widget_weather_box_temp">15°C</p>
+            <p class="panel_inner_widget_weather_box_time">15:00 - 16:00</p>
+          </div>
+          <div class="panel_inner_widget_weather_box desktop">
+            <i class="fas fa-snowflake icon" style="color: #039BE5"></i>
+            <p class="panel_inner_widget_weather_box_temp">0°C</p>
+            <p class="panel_inner_widget_weather_box_time">16:00 - 17:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel_inner_widget_water">
+        <h6 class="panel_inner_widget_water_title">
+          Surface Temperature
+        </h6>
+        <i class="fas fa-thermometer-half icon_large" style="color: #42A5F5"></i>
+        <p class="panel_inner_widget_water_reading">- 5°C</p>
+      </div>
+
+      <div class="panel_inner_widget_other">
+        <h6 class="panel_inner_widget_other_title">Other</h6>
+        <i class="fas fa-cloud-rain icon_medium" style="color: #039BE5"></i>
+        <p style="position: absolute; left:34px; top: 26px">This rain is seemingly everywhere some
+          might say it's ubiquitous</p>
+      </div>
+
+      <div class="panel_inner_description">
+          <h6 class="panel_inner_description_title">
+            Dive Type - &nbsp; <span style="font-weight: 100">{{diveSiteInformation.diveType}}</span>
+          </h6>
+        </div>
+
+      <div class="panel_inner_description">
+        <h6 class="panel_inner_description_title">
+          About - {{diveSiteInformation.name}}
+        </h6>
+        <p>
+          {{diveSiteInformation.description}}
+        </p>
+      </div>
+
+      <div class="panel_inner_gallery">
+
+      </div>
+    </div>
+
+  </div>
+</section>

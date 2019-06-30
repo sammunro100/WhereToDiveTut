@@ -1,0 +1,10 @@
+<section class="menu" [class.menu_closed]="!showMenu">
+  <ul>
+    <li *ngFor="let opt of navOptions.navigation">
+        <a [routerLink]="opt.routerLink">{{opt.routerDisplayName}}</a>
+    </li>
+    <li *ngFor="let opt of navOptions.adminNavigation">
+        <a [routerLink]="opt.routerLink">{{opt.routerDisplayName}}</a>
+    </li>
+  </ul>
+</section>

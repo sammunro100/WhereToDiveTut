@@ -1,0 +1,37 @@
+@import '../../_scss/common.scss';
+
+.menu{
+    height: calc(100vh - 62px);
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+    top: 62px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    transition: all 0.4s linear;
+    @include responsiveBP(1024px){
+        display: none;
+    }
+    &_closed{
+        transform: translateY(-100vh);
+    }
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    color: black;
+    @include flexCenterCenter();
+    border-bottom: 1px solid $darkTeal;
+    width: 100vw;
+    height: 50px;;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
